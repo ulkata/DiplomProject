@@ -30,6 +30,7 @@ namespace HealthyFoods.Infrastructure.Data.Domain
         public string Picture { get; set; } = null!;
 
         [Required]
+        [Range(0, 100)]
         public decimal Price { get; set; }
         
         [Required]
