@@ -123,9 +123,9 @@ namespace HealthyFoods.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-             //       _userManager.AddToRoleAsync(user, "Client").Wait();
+                  _userManager.AddToRoleAsync(user, "Client").Wait();
 
-               //     var userId = await _userManager.GetUserIdAsync(user);
+                   var userId = await _userManager.GetUserIdAsync(user);
              await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
                     
