@@ -11,7 +11,7 @@ namespace HealthyFoods.Models.Product
 
         [Required]
         [MaxLength(30)]
-        [Display(Name = "Product Name")]
+        [Display(Name = "Food Name")]
         public string ProductName { get; set; } = null!;
         
 
@@ -19,11 +19,20 @@ namespace HealthyFoods.Models.Product
         [Display(Name = "Category")]
         public int CategoryId { get; set; }
         public virtual List<CategoryPairVM> Categories { get; set; } = new List<CategoryPairVM>();
-        
+
+
+
+        [Required]
+        [MaxLength(250)]
+        [Display(Name = "Ingredients")]
+        public string Ingredients { get; set; } = null!;
+
+
         [Required]
         [MaxLength(150)]
         [Display(Name = "Description")]
         public string Description { get; set; }
+
 
         [Display(Name = "Picture")]
         public string Picture { get; set; } = null!;

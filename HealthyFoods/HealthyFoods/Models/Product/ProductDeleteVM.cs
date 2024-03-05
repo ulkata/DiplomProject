@@ -9,13 +9,17 @@ namespace HealthyFoods.Models.Product
         [Key]
         public int Id { get; set; }
 
-        [Display(Name = "Product Name")]
+        [Display(Name = "Food Name")]
         public string ProductName { get; set; } = null!;
 
        
         public int CategoryId { get; set; }
         [Display(Name = "Category")]
         public string CategoryName { get; set; } = null!;
+
+      
+        [Display(Name = "Ingredients")]
+        public string Ingredients { get; set; } = null!;
 
         [Display(Name = "Description")]
         public string Description { get; set; }

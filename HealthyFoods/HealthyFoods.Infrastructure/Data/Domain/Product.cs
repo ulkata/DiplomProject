@@ -23,6 +23,11 @@ namespace HealthyFoods.Infrastructure.Data.Domain
         public virtual Category Category { get; set; } = null!;
 
         [Required]
+        [MaxLength(250)]
+        public string Ingredients { get; set; } = null!;
+
+
+        [Required]
         [MaxLength(150)]
         public string Description { get; set; } = null!;
 

@@ -10,9 +10,9 @@ namespace HealtyFoods.Core.Contracts
 {
     public interface IProductService
     {
-        bool Create(string name, int categoryId, string description, string picture, int quantity, decimal price, decimal discount);
+        bool Create(string name, int categoryId ,string ingredients, string description, string picture, int quantity, decimal price, decimal discount);
 
-        bool Update(int productId, string name, int categoryId, string description, string picture, int quantity, decimal price, decimal discount);
+        bool Update(int productId, string name, int categoryId, string ingredients, string description, string picture, int quantity, decimal price, decimal discount);
 
         List<Product> GetProducts();
 

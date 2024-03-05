@@ -58,6 +58,8 @@ namespace HealthyFoods.Controllers
                 ProductName = item.ProductName,               
               CategoryId = item.CategoryId,
                 CategoryName = item.Category.CategoryName,
+                Ingredients = item.Ingredients,
+                Description = item.Description,
                 Picture = item.Picture,
                 Quantity = item.Quantity,
                 Price = item.Price,
@@ -89,7 +91,7 @@ namespace HealthyFoods.Controllers
             if (ModelState.IsValid)
             {
                 var createdId = _productService.Create(product.ProductName, 
-                product.CategoryId, product.Description, product.Picture,
+                product.CategoryId, product.Ingredients, product.Description, product.Picture,
                 product.Quantity, product.Price, product.Discount);
                 if (createdId)
                 {
@@ -116,6 +118,7 @@ namespace HealthyFoods.Controllers
                 ProductName = product.ProductName,
                 Description = product.Description,
                 CategoryId = product.CategoryId,
+                Ingredients = product.Ingredients,
                 // CategoryName = product.Category.CategoryName,
                 Picture = product.Picture,
                 Quantity = product.Quantity,
@@ -142,7 +145,7 @@ namespace HealthyFoods.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var updated = _productService.Update(id, product.ProductName, product.CategoryId, product.Description, product.Picture,product.Quantity, product.Price, product.Discount);
+                    var updated = _productService.Update(id, product.ProductName, product.CategoryId, product.Ingredients, product.Description, product.Picture,product.Quantity, product.Price, product.Discount);
                     if (updated)
                     {
                         return this.RedirectToAction("Index");
@@ -167,6 +170,8 @@ namespace HealthyFoods.Controllers
                 ProductName = item.ProductName,
                 CategoryId = item.CategoryId,
                 CategoryName = item.Category.CategoryName,
+                Ingredients = item.Ingredients,
+                Description = item.Description,
                 Picture = item.Picture,
                 Quantity = item.Quantity,
                 Price = item.Price,

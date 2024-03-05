@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthyFoods", "HealthyFood
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthyFoods.Infrastructure", "HealthyFoods.Infrastructure\HealthyFoods.Infrastructure.csproj", "{74F1C5DD-1EED-4917-8C56-CE0BB7F184A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealtyFoods.Core", "HealtyFoods.Core\HealtyFoods.Core.csproj", "{BDB2276B-F141-444F-9829-1EA8502AA2EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealtyFoods.Core", "HealtyFoods.Core\HealtyFoods.Core.csproj", "{BDB2276B-F141-444F-9829-1EA8502AA2EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

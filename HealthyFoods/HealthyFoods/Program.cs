@@ -27,6 +27,7 @@ namespace HealthyFoods
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;
@@ -40,6 +41,7 @@ namespace HealthyFoods
 
             builder.Services.AddTransient<ICategoryService, CategoryService>();
             builder.Services.AddTransient<IProductService, ProductService>();
+            builder.Services.AddTransient<IOrderService, OrderService>();
 
 
 

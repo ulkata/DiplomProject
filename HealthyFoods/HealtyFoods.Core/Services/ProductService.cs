@@ -19,12 +19,13 @@ namespace HealtyFoods.Core.Services
         {
             _context = context;
         }
-        public bool Create(string name, int categoryId, string description, string picture, int quantity, decimal price, decimal discount)
+        public bool Create(string name, int categoryId, string ingredients, string description, string picture, int quantity, decimal price, decimal discount)
         {
             Product item = new Product
             {
                 ProductName = name,
                 Category = _context.Categories.Find(categoryId),
+                Ingredients = ingredients,
                 Description = description,
                 Picture = picture,
                 Quantity = quantity,
@@ -79,7 +80,7 @@ namespace HealtyFoods.Core.Services
 
         }
 
-        public bool Update(int productId, string name, int categoryId, string description, string picture, int quantity, decimal price, decimal discount)
+        public bool Update(int productId, string name, int categoryId, string ingredients, string description, string picture, int quantity, decimal price, decimal discount)
         {
             var product = GetProductById(productId);
             if (product == default(Product))
@@ -88,6 +89,7 @@ namespace HealtyFoods.Core.Services
             }
             product.ProductName = name;
             product.Category = _context.Categories.Find(categoryId);
+            product.Ingredients = ingredients;
             product.Description = description;
             product.Picture = picture;
             product.Quantity = quantity;
