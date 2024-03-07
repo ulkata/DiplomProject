@@ -46,10 +46,33 @@ namespace HealthyFoods.Controllers
                     Price = x.Price,
                     Discount = x.Discount,
                     TotalPrice = x.TotalPrice,
+                 
                 }).ToList();
             return View(orders);
         }
 
+        public ActionResult MyOrders()
+        {
+            string currentUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            //  var user = context.Users.SingleOrDefault(u => u.Id == userId);
+
+            List<OrderIndexVM> orders = _orderService.GetOrdersByUser(currentUserId)
+                .Select(x => new OrderIndexVM
+                {
+                    Id = x.Id,
+                    OrderDate = x.DateOrder.ToString("dd-MMM-yyyy hh:mm", CultureInfo.InvariantCulture),
+                    UserId = x.UserId,
+                    User = x.User.UserName,
+                    ProductId = x.ProductId,
+                    Product = x.Product.ProductName,
+                    Picture = x.Product.Picture,
+                    Quantity = x.CountOfProducts,
+                    Price = x.Price,
+                    Discount = x.Discount,
+                    TotalPrice = x.TotalPrice,
+                }).ToList();
+            return View(orders);
+        }
         // GET: OrderController/Details/5
         public ActionResult Details(int id)
         {
@@ -73,6 +96,8 @@ namespace HealthyFoods.Controllers
                 Price = product.Price,
                 Discount = product.Discount,
                 Picture = product.Picture,
+               
+
             };
             return View(order);
         }

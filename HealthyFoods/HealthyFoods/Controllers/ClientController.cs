@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HealthyFoods.Controllers
 {
- /*   public class ClientController : Controller
+    public class ClientController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IOrderService _orderService;
@@ -111,8 +111,6 @@ namespace HealthyFoods.Controllers
             {
                 return NotFound();
             }
-            var listOfOrders = _orderService.GetOrdersByUser(id);
-            if (listOfOrders.Count > 0) { return RedirectToAction("DeleteDenied"); }
             ClientDeleteVM userToDelete = new ClientDeleteVM()
             {
                 Id = user.Id,
@@ -148,11 +146,6 @@ namespace HealthyFoods.Controllers
         {
             return View();
         }
-
-        public ActionResult DeleteDenied()
-        {
-            return View();
-        }
-    }*/
+    }
 }
 
