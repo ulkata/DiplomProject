@@ -3,6 +3,19 @@
 @{
     ViewData["Title"] = "Index";
 }
+
+
+
+<style>
+
+    body {
+        background-image: url("https://www.dmoose.com/cdn/shop/articles/1_main_c744286f-7410-47cc-b2e4-1de51c2b0b13.jpg?v=1651313716");
+        background-size: cover;
+        background-position: center; /* Center the background image */
+        background-repeat: no-repeat; /* Do not repeat the background image */
+    }
+
+</style>
 <h1>Products</h1>
 
 @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
